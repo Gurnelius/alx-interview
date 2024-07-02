@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/python3
 """
 Module for the function
 canUnlockAll
@@ -30,8 +29,3 @@ def canUnlockAll(boxes):
                 keys.append(key)  # Add its keys to the list
 
     return all(unlocked)  # Check if all boxes are unlocked
-
-
-if __name__ == "__main__":
-    boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
-    print(canUnlockAll(boxes))  # Output: True
