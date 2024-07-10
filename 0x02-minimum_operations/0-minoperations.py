@@ -10,6 +10,18 @@ H => Copy All => Paste => HH => Paste =>HHH => Copy All
 
 
 def minOperations(n):
+    """
+    Calculates the minimum number of operations needed to
+    obtain a string of 'H' characters of length `n`.
+
+    Parameters:
+        n (int): The desired length of the string.
+
+    Returns:
+        int: The minimum number of operations needed.
+
+    """
+
     if n < 2:
         return 0
 
