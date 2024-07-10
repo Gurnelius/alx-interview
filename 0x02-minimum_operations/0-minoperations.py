@@ -10,24 +10,38 @@ H => Copy All => Paste => HH => Paste =>HHH => Copy All
 
 
 def minOperations(n):
-    """
-    Calculates the minimum number of operations needed to
-    obtain a string of 'H' characters of length `n`.
+    """Calculate fewest number of operations
+    needed to result in n H characters"""
+    total_operations = 0
+    divisor = 2
 
-    Parameters:
-        n (int): The desired length of the string.
+    while n > 1:
+        while n % divisor == 0:
+            total_operations += divisor
+            n //= divisor
+        divisor += 1
 
-    Returns:
-        int: The minimum number of operations needed.
+    return total_operations
 
-    """
+# def minOperations(n):
+#     """
+#     Calculates the minimum number of operations needed to
+#     obtain a string of 'H' characters of length `n`.
 
-    if n < 2:
-        return 0
+#     Parameters:
+#         n (int): The desired length of the string.
 
-    if n % 2 == 0:
-        return 2 + minOperations(n/2)
-    if n % 3 == 0:
-        return 3 + minOperations(n/3)
-    else:
-        return 1 + minOperations(n-1)
+#     Returns:
+#         int: The minimum number of operations needed.
+
+#     """
+
+#     if n < 2:
+#         return 0
+
+#     if n % 2 == 0:
+#         return 2 + minOperations(n/2)
+#     if n % 3 == 0:
+#         return 3 + minOperations(n/3)
+#     else:
+#         return 1 + minOperations(n-1)
