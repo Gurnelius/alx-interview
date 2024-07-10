@@ -12,8 +12,6 @@ H => Copy All => Paste => HH => Paste =>HHH => Copy All
 def minOperations(n):
     if n < 2:
         return 0
-    if n == 2:
-        return 2
 
     if n % 2 == 0:
         return 2 + minOperations(n/2)
