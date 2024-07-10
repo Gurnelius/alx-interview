@@ -25,3 +25,5 @@ def minOperations(n):
         return 2 + minOperations(n-3)
     elif n % 3 == 1:
         return 1 + minOperations(n-2)
+    else:
+        return 1 + minOperations(n-1)
