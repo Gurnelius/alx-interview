@@ -19,10 +19,9 @@ def minOperations(n):
 
     if n % 2 == 0:
         return 2 + minOperations(n/2)
+    elif n % 2 == 1 and n % 3 == 1:
+        return 1 + minOperations(n-1)
     if n % 3 == 0:
         return 2 + minOperations(n-3)
-
-    if n % 2 == 1:
-        return 1 + minOperations(n-1)
-    if n % 3 == 1:
+    elif n % 3 == 1:
         return 1 + minOperations(n-2)
