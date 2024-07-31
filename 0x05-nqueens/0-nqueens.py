@@ -6,6 +6,29 @@ import sys
 
 
 def print_solution(board):
+    """
+    Given a board represented as a 2D list of integers,
+    this function finds all the positions of the queens
+    on the board and returns them as a list of lists.
+    Each inner list contains the row and column indices of a queen.
+    The function does not modify the board.
+
+    Parameters:
+    - board (List[List[int]]): A 2D list representing the board.
+    Each element of the list is an integer representing the presence
+    of a queen (1) or absence (0) in a particular position.
+
+    Returns:
+    - solution (List[List[int]]): A list of lists representing the
+    positions of the queens on the board. Each inner list contains the
+    row and column indices of a queen.
+
+    Example:
+    >>> board = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
+    >>> print_solution(board)
+    [[1, 1]]
+    """
+
     solution = []
     for row in range(len(board)):
         for col in range(len(board)):
@@ -15,6 +38,10 @@ def print_solution(board):
 
 
 def is_safe(board, row, col):
+    '''
+    Check if is safe to place a
+    queen at board[row][col]
+    '''
     # Check this row on left side
     for i in range(col):
         if board[row][i] == 1:
@@ -34,6 +61,9 @@ def is_safe(board, row, col):
 
 
 def solve_nqueens_util(board, col):
+    '''
+    Utility to solve nqueens
+    '''
     if col >= len(board):
         print_solution(board)
         return True
@@ -49,6 +79,9 @@ def solve_nqueens_util(board, col):
 
 
 def solve_nqueens(n):
+    '''
+    Solves the n queens problem
+    '''
     board = [[0 for _ in range(n)] for _ in range(n)]
     if not solve_nqueens_util(board, 0):
         print("Solution does not exist")
